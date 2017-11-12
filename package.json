@@ -3,6 +3,7 @@
   "version": "0.0.1",
   "title": "WordPress Curitiba",
   "description": "Sites, blogs e lojas virtuais com WordPress. Converta seu HTML para WordPress, seu arquivo PSD para WordPress e seu arquivo Sketch para WordPress.",
+  "homepage": "https://wordpress.curitiba.br",
   "main": "gulpfile.js",
   "scripts": {
     "pretest": "eslint .",
@@ -32,7 +33,6 @@
   "bugs": {
     "url": "https://github.com/nandomoreirame/wordpress.curitiba.br/issues"
   },
-  "homepage": "https://github.com/nandomoreirame/wordpress.curitiba.br#readme",
   "engines": {
     "node": ">=8"
   },

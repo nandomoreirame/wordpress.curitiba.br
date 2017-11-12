@@ -1,6 +1,6 @@
-# Starter Kit
+# WordPress Curitiba
 
-> A simple front-end starter-kit with Babel, Gulpjs, Pug and Stylus
+> Sites, blogs e lojas virtuais com WordPress. Converta seu HTML para WordPress, seu arquivo PSD para WordPress e seu arquivo Sketch para WordPress.
 
 ```bash
 $ yarn install # or npm install
