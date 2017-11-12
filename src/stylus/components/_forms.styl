@@ -1,0 +1,62 @@
+.form
+  &__group
+    position relative
+    margin-bottom spacingSmall
+    @extend .clearfix
+  &__input
+    background-color whiteColor
+    position relative
+    z-index 1
+    border-radius 2.5rem
+    border none
+    line-height 67px
+    padding 0 2.5rem
+    font-size 18px
+    display block
+    width 100%
+  &__button
+    position absolute
+    z-index 2
+    top .625rem
+    right .9375rem
+    border-radius 1.875rem
+    background-color ceruleanColor
+    cursor pointer
+    color whiteColor
+    border none
+    padding 0 2.1875rem
+    margin 0
+    width 60px
+    height 48px
+    overflow hidden
+    white-space nowrap
+    transition .12s width ease-in-out
+    span
+      opacity 0
+      transform translate3d(100%, 0, 0)
+      transition .12s transform ease-in-out, .12s opacity ease-in-out
+      top 15px
+      left 30px
+    span, svg
+      position absolute
+      display inline-block
+      vertical-align middle
+    svg
+      right 20px
+      top 12px
+    +above(desktop-lg)
+      &:hover,
+      &:focus
+        width 240px
+        span
+          opacity 1
+          transform translate3d(0, 0, 0)
+
+  ::-webkit-input-placeholder
+    color pinkishGreyColor
+  ::-moz-placeholder
+    color pinkishGreyColor
+  :-ms-input-placeholder
+    color pinkishGreyColor
+  :-moz-placeholder
+    color pinkishGreyColor

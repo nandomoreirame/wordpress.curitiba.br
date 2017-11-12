@@ -1,0 +1,47 @@
+.hero,
+.container
+  position relative
+  +above(tablet-md)
+    display flex
+    align-items center
+
+.hero
+  background-image none
+  +above(tablet-md)
+    width 100%
+    height 100%
+    justify-content center
+  +above(desktop-xl)
+    background-image url(/assets/images/notebook.png)
+    background-repeat no-repeat
+    background-position 140% 50%
+  +above(desktop-xxl)
+    background-position 120% 50%
+  .container
+    +above(tablet-md)
+      justify-content flex-start
+    h1
+      font-size 52px
+      font-weight fontWeightRegular
+      line-height 1.2
+      +above(tablet-md)
+        font-size 62px
+    p
+      font-size 22px
+      +above(tablet-md)
+        font-size 18px
+  .form
+    margin 0
+    padding toRem(spacingSmall) 0
+    max-width 560px
+    +below(desktop-lg)
+      max-width 400px
+    +below(tablet-md)
+      margin 0 auto
+  &__inner
+    +below(tablet-md)
+      padding-top 15rem
+      text-align center
+  &__left
+    +above(desktop-lg)
+      flex 0 0 60%
