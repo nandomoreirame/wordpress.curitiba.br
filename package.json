@@ -10,7 +10,7 @@
     "build": "npm run clean && NODE_ENV=production gulp build",
     "start": "npm run clean && NODE_ENV=production gulp",
     "dev": "npm run clean && NODE_ENV=development gulp",
-    "deploy": "npm run build && push-dir --dir=public --branch=production --cleanup --force",
+    "deploy": "npm run build && push-dir --dir=public --branch=master --cleanup --force",
     "test": "echo 'no has test! lol'"
   },
   "repository": {
