@@ -1,8 +1,9 @@
 html,
 body,
 main
-  width 100%
-  height 100%
+  +above(tablet-md)
+    width 100%
+    height 100%
 
 body
   background-color ceruleanColor
@@ -13,13 +14,15 @@ body
     width 100%
     height 100%
     background-color blackColor
-    clip-path polygon(0 0, 100% 0, 100% 0%, 0% 100%)
     opacity .05
     position absolute
     top 0
     right 0
     bottom 0
     left 0
+    clip-path polygon(0 0, 100% 0, 100% 0%, 0% 40%)
+    +above(tablet-md)
+      clip-path polygon(0 0, 100% 0, 100% 0%, 0% 100%)
 
 hr
   border none
