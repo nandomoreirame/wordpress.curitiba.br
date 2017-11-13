@@ -14,8 +14,8 @@ $(document).ready(() => {
       data: { email },
       dataType: 'json'
     }).done(() => {
+      $email.val('')
       $form.addClass('form--success')
-      $email.attr('value', '')
     }).fail(e => {
       console.error(e)
     })
