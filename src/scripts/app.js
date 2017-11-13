@@ -5,7 +5,7 @@ $(document).ready(() => {
     const $form = $(this)
     const method = $form.attr('method')
     const url = $form.attr('action')
-    const email = $form.find('[name="email"]').value()
+    const email = $form.find('[name="email"]').val()
 
     $.ajax({
       url,
