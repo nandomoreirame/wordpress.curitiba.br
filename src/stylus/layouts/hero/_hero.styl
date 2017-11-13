@@ -15,6 +15,14 @@
   .container
     +above(tablet-md)
       justify-content flex-start
+  &--center
+    .container
+      +above(tablet-md)
+        text-align center
+        justify-content center
+    .hero__text
+      +above(tablet-md)
+        flex 0 0 100%
   .form
     margin 0
     padding toRem(spacingSmall) 0
