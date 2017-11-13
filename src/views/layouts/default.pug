@@ -10,6 +10,13 @@ html(lang='pt-br')
       if isProduction
         style
           include ../app.css
+        // Global site tag (gtag.js) - Google Analytics
+        script(src='https://www.googletagmanager.com/gtag/js?id=UA-109583868-1' async)
+        script.
+          window.dataLayer = window.dataLayer || [];
+          function gtag(){dataLayer.push(arguments);}
+          gtag('js', new Date());
+          gtag('config', 'UA-109583868-1');
       else
         link(rel='stylesheet', href='/assets/stylesheets/bundle' + fileHash + '.css')
   body
