@@ -1,0 +1,11 @@
+form.form(method='post' action='http://formspree.io/orcamento@wordpress.curitiba.br')
+  .form__group
+    input.form__input(type='hidden' name='_language' value='pt')
+    input.form__input(type='hidden' name='_replyto' value='orcamento@wordpress.curitiba.br')
+    input.form__input(type='hidden' name='_cc' value='nandomoreira.me@gmail.com')
+    input.form__input(type='hidden' name='_subject' value=subject)
+    input.form__input(type='email' name='email' placeholder='Digite seu email preferido')
+    button.form__button(type='submit' role='button')
+      span= 'Solicitar orçamento'
+      svg(xmlns='http://www.w3.org/2000/svg' width='32' height='24' viewbox='0 0 32 24')
+        path(fill='#FFF' fill-rule='evenodd' d='M31.88 12.527c-.07.176-.172.344-.32.488L20.493 23.6c-.554.534-1.456.534-2.01 0-.557-.53-.557-1.392 0-1.923l8.746-8.368H1.362C.61 13.31 0 12.72 0 11.994s.61-1.313 1.362-1.313h25.86l-8.738-8.36c-.557-.53-.557-1.392 0-1.923.554-.533 1.456-.533 2.01 0L31.56 10.983c.145.14.248.303.317.478.077.163.123.34.123.533 0 .19-.046.37-.12.532z')
