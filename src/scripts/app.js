@@ -5,13 +5,19 @@ $(document).ready(() => {
     const $form = $(this)
     const method = $form.attr('method')
     const url = $form.attr('action')
-    const email = $form.find('[name="email"]').val()
+    const $email = $form.find('[name="email"]')
+    const email = $email.val()
 
     $.ajax({
       url,
       method,
       data: { email },
       dataType: 'json'
+    }).done(() => {
+      $form.addClass('form--success')
+      $email.attr('value', '')
+    }).error(e => {
+      console.error(e)
     })
   })
 })

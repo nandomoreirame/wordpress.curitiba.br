@@ -77,3 +77,20 @@
         span
           opacity 1
           transform translate3d(0, 0, 0)
+  &__alert
+    text-align center
+    padding toRem(spacingSmall) toRem(spacingBase)
+    margin-top toRem(spacingSmall)
+    color whiteColor
+    background-color rgba(#d4edda, .3)
+    border 1px solid rgba(#c3e6cb, .3)
+    border-radius .25rem
+    display none
+    position absolute
+    top 100%
+    p
+      font-size 14px
+      margin 0
+  &--success
+    .form__alert
+      display block
