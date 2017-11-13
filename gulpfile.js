@@ -29,7 +29,10 @@ task('images', () =>
     .pipe(dest(config.dest.images)))
 
 task('static', () =>
-  src(`${config.src.static}/*`)
+  src([
+    `${config.src.static}/*`,
+    `${config.src.static}/.htaccess`
+  ])
     .pipe($.size(config.size('static')))
     .pipe(dest(config.dest.public)))
 
