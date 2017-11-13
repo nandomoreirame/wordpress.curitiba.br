@@ -3,14 +3,14 @@ $(document).ready(() => {
     e.preventDefault()
 
     const $form = $(this)
-    const _method = $form.attr('method')
-    const _action = $form.attr('action')
-    const _data = $form.serialize()
+    const method = $form.attr('method')
+    const url = $form.attr('action')
+    const email = $form.find('[name="email"]').value()
 
     $.ajax({
-      url: _action,
-      method: _method,
-      data: _data,
+      url,
+      method,
+      data: { email },
       dataType: 'json'
     })
   })

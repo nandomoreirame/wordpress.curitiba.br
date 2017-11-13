@@ -17,7 +17,7 @@ html(lang='pt-br')
     main
       block content
     include ../includes/footer.pug
-    //- block scripts
-    //-   script(src='/assets/javascripts/vendor' + fileHash + '.js')
-    //-   script(src='/assets/javascripts/bundle' + fileHash + '.js')
+    block scripts
+      script(src='/assets/javascripts/vendor' + fileHash + '.js')
+      script(src='/assets/javascripts/bundle' + fileHash + '.js')
 
