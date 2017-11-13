@@ -15,7 +15,11 @@
     color lightNavyColor
     opacity .7
     margin 0
+    transition .12s opacity ease-in-out
     +below(tablet-md)
       line-height 1.5
     &, strong
       font-weight fontWeightMedium
+    &:hover,
+    &:focus
+      opacity 1
