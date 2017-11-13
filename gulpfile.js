@@ -42,8 +42,8 @@ task('templates', () =>
     .pipe($.plumber(config.plumber))
     .pipe($.data(file => assign({ fileHash: config.fileHash, isProduction }, config.pkg)))
     .pipe($.pug({
-      // pretty: !isProduction
-      pretty: true
+      pretty: !isProduction
+      // pretty: true
     }))
     .pipe($.rename(path => {
       if (path.basename !== 'index') {
