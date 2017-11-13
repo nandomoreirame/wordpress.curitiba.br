@@ -112,7 +112,7 @@ task('generate-service-worker', () => wbBuild.generateSW({
   }))
 
 task('generate-sitemap', () =>
-  src(`${config.dest.public}/**/*`)
+  src(`${config.dest.public}/**/*.html`)
     .pipe($.sourcemaps.init())
     .pipe($.sitemap({
       siteUrl: 'https://wordpress.curitiba.br'
