@@ -1,17 +1,20 @@
 extends layouts/default.pug
+block head
+  - var pageUrl = homepage + '/converter-html-para-wordpress/'
+  - var pageTitle = 'HTML para WordPress | Sites, blogs e lojas virtuais com WordPress'
+  - var pageDescription = 'Converta seu HTML para WordPress. Contrate um profissional para converter seu código HTML para WordPress.'
+  include includes/head.pug
 block content
   .hero
     .hero__inner
       .container
         .hero__text
           h1
-            | Sites, blogs e lojas virtuais com WordPress
+            | Converta seu HTML para WordPress
           p
-            | Converta seu HTML para
-            strong= ' WordPress, '
-            | seu arquivo PSD para
-            strong= ' WordPress '
-            | e seu arquivo Sketch para
+            | Contrate um profissional para converter seu código
+            strong= ' HTML '
+            | para
             strong= ' WordPress.'
           form.form
             .form__group

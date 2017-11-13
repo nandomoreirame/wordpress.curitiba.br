@@ -1,8 +1,8 @@
-const message = 'Hello Babel!'
+// const message = 'Hello Babel!'
 
-$(document).ready(() => {
-  console.log(message)
-})
+// $(document).ready(() => {
+//   console.log(message)
+// })
 
 // if ('serviceWorker' in navigator) {
 //   navigator.serviceWorker.register('sw.js')

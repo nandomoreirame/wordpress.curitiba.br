@@ -1,17 +1,22 @@
 extends layouts/default.pug
+block head
+  - var pageUrl = homepage + '/converter-psd-para-wordpress/'
+  - var pageTitle = 'Sketch para WordPress | Sites, blogs e lojas virtuais com WordPress'
+  - var pageDescription = 'Converta seu Sketch para WordPress. Contrate um profissional especialista em WordPress para converter seu design feito no Sketch em um tema para WordPress.'
+  include includes/head.pug
 block content
   .hero
     .hero__inner
       .container
         .hero__text
           h1
-            | Sites, blogs e lojas virtuais com WordPress
+            | Converta seu Sketch para WordPress
           p
-            | Converta seu HTML para
-            strong= ' WordPress, '
-            | seu arquivo PSD para
+            | Contrate um profissional  especialista em
             strong= ' WordPress '
-            | e seu arquivo Sketch para
+            | para converter seu design feito no
+            strong= ' Sketch '
+            | em um tema para
             strong= ' WordPress.'
           form.form
             .form__group

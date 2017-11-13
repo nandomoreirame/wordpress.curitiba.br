@@ -3,17 +3,43 @@
     position relative
     margin-bottom spacingSmall
     @extend .clearfix
+    ::-webkit-input-placeholder
+      color pinkishGreyColor
+      opacity .6
+    ::-moz-placeholder
+      color pinkishGreyColor
+      opacity .6
+    :-ms-input-placeholder
+      color pinkishGreyColor
+      opacity .6
+    :-moz-placeholder
+      color pinkishGreyColor
+      opacity .6
+
   &__input
     background-color whiteColor
     position relative
     z-index 1
     border-radius 2.5rem
     border none
-    line-height 67px
-    padding 0 2.5rem
+    line-height 1
+    padding 1.45rem 6rem 1.45rem 2.5rem
     font-size 18px
     display block
     width 100%
+    &:focus
+      &::-webkit-input-placeholder
+        color (pinkishGreyColor - 20%)
+        opacity 1
+      &::-moz-placeholder
+        color (pinkishGreyColor - 20%)
+        opacity 1
+      &:-ms-input-placeholder
+        color (pinkishGreyColor - 20%)
+        opacity 1
+      &:-moz-placeholder
+        color (pinkishGreyColor - 20%)
+        opacity 1
   &__button
     position absolute
     z-index 2
@@ -51,12 +77,3 @@
         span
           opacity 1
           transform translate3d(0, 0, 0)
-
-  ::-webkit-input-placeholder
-    color pinkishGreyColor
-  ::-moz-placeholder
-    color pinkishGreyColor
-  :-ms-input-placeholder
-    color pinkishGreyColor
-  :-moz-placeholder
-    color pinkishGreyColor

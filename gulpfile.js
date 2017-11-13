@@ -40,9 +40,17 @@ task('fonts', () =>
 task('templates', () =>
   src('./src/views/*.pug')
     .pipe($.plumber(config.plumber))
-    .pipe($.data(file => assign({ fileHash: config.fileHash }, config.pkg)))
+    .pipe($.data(file => assign({ fileHash: config.fileHash, isProduction }, config.pkg)))
     .pipe($.pug({
-      pretty: !isProduction
+      // pretty: !isProduction
+      pretty: true
+    }))
+    .pipe($.rename(path => {
+      if (path.basename !== 'index') {
+        path.dirname = path.basename
+        path.basename = 'index'
+      }
+      path.extname = '.html'
     }))
     .pipe($.size(config.size('templates')))
     .pipe(dest(config.dest.public))
@@ -83,6 +91,7 @@ task('stylus', () =>
       beautify: true
     }))
     .pipe(isProduction ? $.cssnano(config.cssnano) : $.util.noop())
+    .pipe(dest(`./src/views`))
     .pipe($.rename(`bundle${config.fileHash}.css`))
     .pipe($.sourcemaps.write())
     .pipe($.size(config.size('stylus')))
@@ -115,6 +124,6 @@ task('stream', () => {
 })
 
 task('build', (cb) =>
-  sequence(['static', 'templates', 'stylus', 'scripts', 'images', 'fonts'], ['generate-service-worker'], cb))
+  sequence(['static'], ['stylus'], ['templates', 'scripts', 'images', 'fonts'], ['generate-service-worker'], cb))
 
 task('default', (cb) => sequence('build', 'stream', ['webserver'], cb))

@@ -6,42 +6,51 @@
     align-items center
 
 .hero
-  background-image none
+  overflow-x hidden
   +above(tablet-md)
     width 100%
     height 100%
     justify-content center
-  +above(desktop-xl)
-    background-image url(/assets/images/notebook.png)
-    background-repeat no-repeat
-    background-position 140% 50%
-  +above(desktop-xxl)
-    background-position 120% 50%
+    overflow hidden
   .container
     +above(tablet-md)
       justify-content flex-start
+  .form
+    margin 0
+    padding toRem(spacingSmall) 0
+    max-width 560px
+    +below(desktop-xl)
+      max-width 400px
+      margin 0 auto
+  &__inner
+    +below(desktop-xl)
+      padding 4rem 0 0
+      text-align center
+  &__text
+    +above(desktop-xl)
+      flex 0 0 60%
     h1
-      font-size 52px
+      font-size 42px
       font-weight fontWeightRegular
       line-height 1.2
       +above(tablet-md)
         font-size 62px
     p
-      font-size 22px
+      font-size 20px
+      opacity .8
       +above(tablet-md)
         font-size 18px
-  .form
-    margin 0
-    padding toRem(spacingSmall) 0
-    max-width 560px
-    +below(desktop-lg)
-      max-width 400px
-    +below(tablet-md)
-      margin 0 auto
-  &__inner
-    +below(tablet-md)
-      padding 4rem 0 0
-      text-align center
-  &__left
-    +above(desktop-lg)
-      flex 0 0 60%
+  &__notebook
+    display none
+    +above(desktop-xl)
+      display block
+      position absolute
+      top 0
+      right 0
+      flex 0 0 40%
+      height 100vh
+      transform translate3d(55%, -15%, 0)
+    img
+      display block
+      width 100%
+      height auto
