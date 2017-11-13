@@ -7,25 +7,23 @@ $(document).ready(() => {
     const url = $form.attr('action')
     const data = $form.serialize()
     const $email = $form.find('[name="email"]')
-    // const email = $email.val()
+    const _email = $email.val()
 
-    $.ajax({
-      url,
-      method,
-      data,
-      dataType: 'json'
-    }).done(() => {
-      $email.val('')
-      $form.addClass('form--success')
-    }).fail(e => {
-      console.error(e)
-    })
+    if (_email !== '' && _email !== undefined && _email !== null) {
+      $.ajax({
+        url,
+        method,
+        data,
+        dataType: 'json'
+      }).done(() => {
+        $form.addClass('form--success')
+      }).fail(e => {
+        console.error(e)
+        $form.addClass('form--error')
+      })
+    } else {
+      $form.addClass('form--error')
+    }
+    $email.val('').focus()
   })
 })
-
-if ('serviceWorker' in navigator) {
-  navigator.serviceWorker.register('sw.js')
-    .then(registration => {
-      console.log('offline worker registered!')
-    })
-}
