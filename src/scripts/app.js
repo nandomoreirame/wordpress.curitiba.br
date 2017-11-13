@@ -16,7 +16,7 @@ $(document).ready(() => {
     }).done(() => {
       $form.addClass('form--success')
       $email.attr('value', '')
-    }).error(e => {
+    }).fail(e => {
       console.error(e)
     })
   })
