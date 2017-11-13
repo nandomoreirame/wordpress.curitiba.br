@@ -111,6 +111,14 @@ task('generate-service-worker', () => wbBuild.generateSW({
     console.log('[ERROR] This happened: ' + err)
   }))
 
+task('generate-sitemap', () =>
+  src(`${config.dest.public}/**/*`)
+    .pipe($.sourcemaps.init())
+    .pipe($.sitemap({
+      siteUrl: 'https://wordpress.curitiba.br'
+    }))
+    .pipe(dest(config.dest.public)))
+
 task('webserver', () =>
   src(config.dest.public)
     .pipe($.webserver(config.webServer)))
@@ -124,6 +132,6 @@ task('stream', () => {
 })
 
 task('build', (cb) =>
-  sequence(['static'], ['stylus'], ['templates', 'scripts', 'images', 'fonts'], ['generate-service-worker'], cb))
+  sequence(['static'], ['stylus'], ['templates', 'scripts', 'images', 'fonts'], ['generate-service-worker'], ['generate-sitemap'], cb))
 
 task('default', (cb) => sequence('build', 'stream', ['webserver'], cb))
