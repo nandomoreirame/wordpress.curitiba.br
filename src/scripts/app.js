@@ -1,8 +1,20 @@
-// const message = 'Hello Babel!'
+$(document).ready(() => {
+  $('[data-sendform]').submit(function (e) {
+    e.preventDefault()
 
-// $(document).ready(() => {
-//   console.log(message)
-// })
+    const $form = $(this)
+    const _method = $form.attr('method')
+    const _action = $form.attr('action')
+    const _data = $form.serialize()
+
+    $.ajax({
+      url: _action,
+      method: _method,
+      data: _data,
+      dataType: 'json'
+    })
+  })
+})
 
 // if ('serviceWorker' in navigator) {
 //   navigator.serviceWorker.register('sw.js')
