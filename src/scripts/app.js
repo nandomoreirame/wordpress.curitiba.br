@@ -23,9 +23,9 @@ $(document).ready(() => {
   })
 })
 
-// if ('serviceWorker' in navigator) {
-//   navigator.serviceWorker.register('sw.js')
-//     .then(registration => {
-//       console.log('offline worker registered!')
-//     })
-// }
+if ('serviceWorker' in navigator) {
+  navigator.serviceWorker.register('sw.js')
+    .then(registration => {
+      console.log('offline worker registered!')
+    })
+}
