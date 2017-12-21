@@ -1,29 +1,48 @@
+/* eslint no-useless-escape: 0 no-control-regex: 0 */
+
+const isEmail = (str) =>
+  /.+\@.+\..+/.test(str)
+
 $(document).ready(() => {
+  const validateForm = formData => {
+    let err = []
+    let count = 0
+
+    $.each(formData, (i, el) => {
+      if (el.value === '' || undefined === el.value || el.value === null) {
+        err[count] = el.name
+        count++
+      }
+
+      if (el.name === 'email' && !isEmail(el.value)) {
+        err[count] = `not is ${el.name}`
+      }
+    })
+
+    return !(err.length > 0)
+  }
+
   $('[data-sendform]').submit(function (e) {
     e.preventDefault()
 
     const $form = $(this)
-    const method = $form.attr('method')
-    const url = $form.attr('action')
-    const data = $form.serialize()
-    const $email = $form.find('[name="email"]')
-    const _email = $email.val()
+    const formData = $form.serializeArray()
 
-    if (_email !== '' && _email !== undefined && _email !== null) {
+    if (validateForm(formData)) {
       $.ajax({
-        url,
-        method,
-        data,
+        url: $form.attr('action'),
+        method: $form.attr('method'),
+        data: $form.serialize(),
         dataType: 'json'
       }).done(() => {
+        $form.removeClass('form--error')
         $form.addClass('form--success')
       }).fail(e => {
-        console.error(e)
+        $form.removeClass('form--success')
         $form.addClass('form--error')
       })
     } else {
       $form.addClass('form--error')
     }
-    $email.val('').focus()
   })
 })
