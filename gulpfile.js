@@ -118,7 +118,7 @@ task('generate-sitemap', () =>
   src(`${config.dest.public}/**/*.html`)
     .pipe($.sourcemaps.init())
     .pipe($.sitemap({
-      siteUrl: 'https://wordpress.curitiba.br'
+      siteUrl: 'https://wordpress.nandomoreira.me'
     }))
     .pipe(dest(config.dest.public)))
 

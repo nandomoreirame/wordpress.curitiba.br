@@ -1,9 +1,9 @@
 {
-  "name": "wordpress.curitiba.br",
+  "name": "wordpress.nandomoreira.me",
   "version": "0.0.1",
   "title": "WordPress Curitiba",
   "description": "Sites, blogs e lojas virtuais com WordPress. Converta seu HTML para WordPress, seu arquivo PSD para WordPress e seu arquivo Sketch para WordPress.",
-  "homepage": "https://wordpress.curitiba.br",
+  "homepage": "https://wordpress.nandomoreira.me",
   "main": "gulpfile.js",
   "scripts": {
     "pretest": "eslint .",
@@ -16,7 +16,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/nandomoreirame/wordpress.curitiba.br.git"
+    "url": "git+https://github.com/nandomoreirame/wordpress.nandomoreira.me.git"
   },
   "keywords": [
     "wordpress",
@@ -31,7 +31,7 @@
   "author": "Fernando Moreira <nandomoreira.me@gmail.com> (https://nandomoreira.me)",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/nandomoreirame/wordpress.curitiba.br/issues"
+    "url": "https://github.com/nandomoreirame/wordpress.nandomoreira.me/issues"
   },
   "engines": {
     "node": ">=8"
