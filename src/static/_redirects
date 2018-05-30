@@ -1,7 +1,11 @@
 # Redirect domain aliases to primary domain
-https://wordpress.curitiba.br/* https://wordpress.nandomoreira.me/:splat 301!
-http://wordpress.curitiba.br/* https://wordpress.nandomoreira.me/:splat 301!
-https://criarsite.curitiba.br/* https://wordpress.nandomoreira.me/:splat 301!
-http://criarsite.curitiba.br/* https://wordpress.nandomoreira.me/:splat 301!
-https://criarsites.curitiba.br/* https://wordpress.nandomoreira.me/:splat 301!
-http://criarsites.curitiba.br/* https://wordpress.nandomoreira.me/:splat 301!
+
+https://wordpresscuritiba.netlify.com     https://wordpress.nandomoreira.me           301
+http://wordpresscuritiba.netlify.com      https://wordpress.nandomoreira.me           301
+https://wordpress.curitiba.br             https://wordpress.nandomoreira.me           301
+http://wordpress.curitiba.br              https://wordpress.nandomoreira.me           301
+
+http://wordpresscuritiba.netlify.com/*    https://wordpress.nandomoreira.me/:splat    301
+https://wordpresscuritiba.netlify.com/*   https://wordpress.nandomoreira.me/:splat    301
+https://wordpress.curitiba.br/*           https://wordpress.nandomoreira.me/:splat    301
+http://wordpress.curitiba.br/*            https://wordpress.nandomoreira.me/:splat    301

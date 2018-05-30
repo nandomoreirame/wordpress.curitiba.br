@@ -1,5 +1,3 @@
-'use strict'
-
 const {
   task,
   src,
@@ -46,7 +44,6 @@ task('templates', () =>
     .pipe($.data(file => assign({ fileHash: config.fileHash, isProduction }, config.pkg)))
     .pipe($.pug({
       pretty: !isProduction
-      // pretty: true
     }))
     .pipe($.rename(path => {
       if (path.basename !== 'index') {
@@ -135,6 +132,20 @@ task('stream', () => {
 })
 
 task('build', (cb) =>
-  sequence(['static'], ['stylus'], ['templates', 'scripts', 'images', 'fonts'], ['generate-service-worker'], ['generate-sitemap'], cb))
+  sequence(
+    [
+      'static',
+      'stylus'
+    ], [
+      'templates',
+      'scripts',
+      'images',
+      'fonts'
+    ], [
+      'generate-service-worker'
+    ], [
+      'generate-sitemap'
+    ], cb))
 
-task('default', (cb) => sequence('build', 'stream', ['webserver'], cb))
+task('default', (cb) =>
+  sequence('build', 'stream', ['webserver'], cb))

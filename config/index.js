@@ -1,6 +1,4 @@
-'use strict'
-
-const pkg = require('./package.json')
+const pkg = require('../package.json')
 const { join } = require('path')
 const loadPlugins = require('gulp-load-plugins')
 const crypto = require('crypto')
